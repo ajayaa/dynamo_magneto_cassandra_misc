@@ -3,8 +3,8 @@ from boto.dynamodb2.fields import HashKey, RangeKey
 from boto.dynamodb2.types import STRING, NUMBER
 from boto.dynamodb2.layer1 import DynamoDBConnection
 connection_data = {}
-connection_data['aws_access_key_id'] = 'AKIAJ6PJI2SQGES3IMLQ'
-connection_data['aws_secret_access_key'] = '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'
+connection_data['aws_access_key_id'] = 'AKIAJ6PJI2SQGES3IDSL'
+connection_data['aws_secret_access_key'] = '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'
 connection_data['region'] = ''
 connection_data['region'] = 'us-west-2'
 conn = DynamoDBConnection(**connection_data)
