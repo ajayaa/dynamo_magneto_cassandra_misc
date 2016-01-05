@@ -1,0 +1,5 @@
+ways to connect to cassandra from python.
+---------------------------------
+pip install cassandra-driver
+pip install cqlengine (querybuilder)
+

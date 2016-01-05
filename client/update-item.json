@@ -1,0 +1,25 @@
+{
+    "key": {
+        "Author": {
+            "S": "a"
+        }, 
+        "MessageId": {
+            "S": "1"
+        }
+    },
+
+    "attribute_updates": {
+        "Subject": {
+            "value": {
+               "S": "Vacation1" 
+            },
+            "action": "PUT"
+        },
+        "aj": {
+           "value": {
+              "S": "bj"
+            },
+           "action": "PUT"
+        }    
+     }
+}

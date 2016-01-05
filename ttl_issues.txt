@@ -1,0 +1,4 @@
+Insert item:
+vanilla insert works as expected.
+if not exist clause would also work. 
+The trickier part is the expected condition thing.Right now it's really an update. If the data was inserted earlier without a ttl then the update statement would work on columns which are used in SET clause of cql statement. Even if the data was inserted with a ttl, only some columns would have ttl set to new value. So we need to decide whether to provide ttl on row level or column level. If it's on column level then there is no problem. If it's on row level, what we need to do is really insert the same row with new data. But that brings its own race conditions with it. If we use a locking mechanism then if there are more than one magnetodb-api-server 

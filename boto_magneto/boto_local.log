@@ -1,0 +1,926 @@
+DEBUG:boto:Using access key provided by client.
+DEBUG:boto:Using secret key provided by client.
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '2', 'X-Amz-Target': 'DynamoDB_20120810.ListTables'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T064532Z
+x-amz-target:DynamoDB_20120810.ListTables
+
+host;x-amz-date;x-amz-target
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T064532Z
+20150212/localhost/localhost/aws4_request
+bff1e776dac1860c7df1d2864a0fa4adc5747cafb48e684d1e1a4829222e1a9a
+DEBUG:boto:Signature:
+ff04f5c49eed0379153bafc2a25ce1634d45a4e1662abb14ee6d7a7f66c750b0
+DEBUG:boto:Final headers: {'Content-Length': '2', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T064532Z', 'X-Amz-Target': 'DynamoDB_20120810.ListTables', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=ff04f5c49eed0379153bafc2a25ce1634d45a4e1662abb14ee6d7a7f66c750b0'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', 'fbc5af25-4c56-4f85-b44c-6810b710b85c'), ('content-length', '17'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '1315925753'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableNames":[]}
+DEBUG:boto:{"TableNames":[]}
+DEBUG:boto:Retrieving credentials from metadata server.
+ERROR:boto:Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1184, in do_open
+    raise URLError(err)
+URLError: <urlopen error timed out>
+ERROR:boto:Unable to read instance data, giving up
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"KeySchema": [{"KeyType": "HASH", "AttributeName": "uid"}, {"KeyType": "RANGE", "AttributeName": "gid"}], "GlobalSecondaryIndexes": [{"KeySchema": [{"KeyType": "HASH", "AttributeName": "gid"}, {"KeyType": "RANGE", "AttributeName": "uid"}], "IndexName": "EverythingIndex", "Projection": {"ProjectionType": "ALL"}, "ProvisionedThroughput": {"WriteCapacityUnits": 100, "ReadCapacityUnits": 100}}], "TableName": "users", "AttributeDefinitions": [{"AttributeName": "uid", "AttributeType": "S"}, {"AttributeName": "gid", "AttributeType": "S"}], "ProvisionedThroughput": {"WriteCapacityUnits": 1500, "ReadCapacityUnits": 500}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '620', 'X-Amz-Target': 'DynamoDB_20120810.CreateTable'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T065434Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+host;x-amz-date;x-amz-target
+ee4b072f299d4f72dbb19910f45b2206aa3e84e0363ef9cfca54ba0db21fd0f1
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T065434Z
+20150212/localhost/localhost/aws4_request
+4b1d071851211ea4f547a72c04b17c3987ff0325c631da06db046bca8526c92c
+DEBUG:boto:Signature:
+bf40fb75bb7efb6cfcc3a580394f9ec31028daa07f020cb569eec520fd94aacd
+DEBUG:boto:Final headers: {'Content-Length': '620', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T065434Z', 'X-Amz-Target': 'DynamoDB_20120810.CreateTable', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=bf40fb75bb7efb6cfcc3a580394f9ec31028daa07f020cb569eec520fd94aacd'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '922eaa6b-05c3-4e1b-8a40-3127abfb1081'), ('content-length', '770'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2333631167'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"users","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423724074.546,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":0,"ItemCount":0,"GlobalSecondaryIndexes":[{"IndexName":"EverythingIndex","KeySchema":[{"AttributeName":"gid","KeyType":"HASH"},{"AttributeName":"uid","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"},"IndexStatus":"ACTIVE","ProvisionedThroughput":{"ReadCapacityUnits":100,"WriteCapacityUnits":100},"IndexSizeBytes":0,"ItemCount":0}]}}
+DEBUG:boto:{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"users","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423724074.546,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":0,"ItemCount":0,"GlobalSecondaryIndexes":[{"IndexName":"EverythingIndex","KeySchema":[{"AttributeName":"gid","KeyType":"HASH"},{"AttributeName":"uid","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"},"IndexStatus":"ACTIVE","ProvisionedThroughput":{"ReadCapacityUnits":100,"WriteCapacityUnits":100},"IndexSizeBytes":0,"ItemCount":0}]}}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"Expected": {"gid": {"Exists": false}, "uid": {"Exists": false}}, "Item": {"gid": {"S": "1"}, "uid": {"S": "1"}}, "TableName": "users"}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '136', 'X-Amz-Target': 'DynamoDB_20120810.PutItem'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T065733Z
+x-amz-target:DynamoDB_20120810.PutItem
+
+host;x-amz-date;x-amz-target
+841211ff6e169d6f51be6c929a7b55aacd739dcc9d47238ad0559eb294a0a7d8
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T065733Z
+20150212/localhost/localhost/aws4_request
+4eafb957d4f3ff63dc39eb033dfa05601f2b6bdcde4bbd9b7960a67274affe9f
+DEBUG:boto:Signature:
+03aef8b84828ecd7962a6e1a4da3918f9279024f8fd194fb70402e3c5ecc125e
+DEBUG:boto:Final headers: {'Content-Length': '136', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T065733Z', 'X-Amz-Target': 'DynamoDB_20120810.PutItem', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=03aef8b84828ecd7962a6e1a4da3918f9279024f8fd194fb70402e3c5ecc125e'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', 'cd635872-dd66-452c-89ff-82bacdf71153'), ('content-length', '2'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2745614147'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {}
+DEBUG:boto:{}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "users", "Key": {"gid": {"S": "1"}, "uid": {"S": "1"}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '94', 'X-Amz-Target': 'DynamoDB_20120810.GetItem'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T065803Z
+x-amz-target:DynamoDB_20120810.GetItem
+
+host;x-amz-date;x-amz-target
+7955b13f8e1c2ddd50bf1c26ee1c70eeed9a70b9a04373f7cdda977a2852a069
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T065803Z
+20150212/localhost/localhost/aws4_request
+aa3a4e1b067a302662210153e7d02f481a5bfe27cc63175bb1e71c6f1240b83c
+DEBUG:boto:Signature:
+7ecfe1e6bd25c014f03c7ae39c4a4109add1292ac0701f7d2cb5f65e3080e31d
+DEBUG:boto:Final headers: {'Content-Length': '94', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T065803Z', 'X-Amz-Target': 'DynamoDB_20120810.GetItem', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=7ecfe1e6bd25c014f03c7ae39c4a4109add1292ac0701f7d2cb5f65e3080e31d'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '9b008fc9-4eae-4e31-b515-0ec7630508ec'), ('content-length', '42'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2202233565'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"Item":{"uid":{"S":"1"},"gid":{"S":"1"}}}
+DEBUG:boto:{"Item":{"uid":{"S":"1"},"gid":{"S":"1"}}}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "users", "Key": {"gid": {"S": "1"}, "uid": {"S": "1"}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '94', 'X-Amz-Target': 'DynamoDB_20120810.GetItem'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T065811Z
+x-amz-target:DynamoDB_20120810.GetItem
+
+host;x-amz-date;x-amz-target
+7955b13f8e1c2ddd50bf1c26ee1c70eeed9a70b9a04373f7cdda977a2852a069
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T065811Z
+20150212/localhost/localhost/aws4_request
+6b8596e61df0d6ad364035ada6a8349a1034878df23b48c9d60e4cff0b381897
+DEBUG:boto:Signature:
+1057193f5558780c856e6961774bf9150f0e981ce30c884249758fedfada7211
+DEBUG:boto:Final headers: {'Content-Length': '94', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T065811Z', 'X-Amz-Target': 'DynamoDB_20120810.GetItem', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=1057193f5558780c856e6961774bf9150f0e981ce30c884249758fedfada7211'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', 'a2c8b111-8c04-4497-9625-f8830a0a45f2'), ('content-length', '42'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2202233565'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"Item":{"uid":{"S":"1"},"gid":{"S":"1"}}}
+DEBUG:boto:{"Item":{"uid":{"S":"1"},"gid":{"S":"1"}}}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"Expected": {"gid": {"Exists": false}, "uid": {"Exists": false}}, "Item": {"gid": {"S": "g1"}, "uid": {"S": "u1"}}, "TableName": "users"}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '138', 'X-Amz-Target': 'DynamoDB_20120810.PutItem'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T065857Z
+x-amz-target:DynamoDB_20120810.PutItem
+
+host;x-amz-date;x-amz-target
+bdb1dd75bd267a5b32ca5d547bdfebc8a10a9562da7ebc56bec99e138e1f8807
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T065857Z
+20150212/localhost/localhost/aws4_request
+8e435ed3332d473c534acc61e0b50f4118e80503d892456f09543d586b4a6f3f
+DEBUG:boto:Signature:
+c1c884235a404f3f90074652aa63185a832b0b8a0da6777b1a21f3ed3a12c31d
+DEBUG:boto:Final headers: {'Content-Length': '138', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T065857Z', 'X-Amz-Target': 'DynamoDB_20120810.PutItem', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=c1c884235a404f3f90074652aa63185a832b0b8a0da6777b1a21f3ed3a12c31d'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '36829a04-c799-4fd1-bf27-9405965abfaa'), ('content-length', '2'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2745614147'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {}
+DEBUG:boto:{}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "users", "Key": {"gid": {"S": "1"}, "uid": {"S": "u1"}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '95', 'X-Amz-Target': 'DynamoDB_20120810.GetItem'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T065909Z
+x-amz-target:DynamoDB_20120810.GetItem
+
+host;x-amz-date;x-amz-target
+769cfe4dc4d13019436888d08293925ce837c20eb905cbd7ebc5c220242b6e9f
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T065909Z
+20150212/localhost/localhost/aws4_request
+0ad811bed53651c18152bd621d4dc1356ca20e6f6365d30c089a04c0a8d24342
+DEBUG:boto:Signature:
+806b13d16ff09685a782a9a01a6179e3885042203a3fd5b75cffe263241741b3
+DEBUG:boto:Final headers: {'Content-Length': '95', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T065909Z', 'X-Amz-Target': 'DynamoDB_20120810.GetItem', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=806b13d16ff09685a782a9a01a6179e3885042203a3fd5b75cffe263241741b3'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '719b040a-8a51-4aeb-9a99-1fee9f5318cc'), ('content-length', '2'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2745614147'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {}
+DEBUG:boto:{}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"Expected": {"gid": {"Exists": false}, "uid": {"Exists": false}}, "Item": {"gid": {"S": "g2"}, "uid": {"S": "u1"}}, "TableName": "users"}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '138', 'X-Amz-Target': 'DynamoDB_20120810.PutItem'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T070002Z
+x-amz-target:DynamoDB_20120810.PutItem
+
+host;x-amz-date;x-amz-target
+74aa2b9550e1ed29b2cfcb606f82020494318a14bdda0a5d67e8fd41cce2db7b
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T070002Z
+20150212/localhost/localhost/aws4_request
+e53e674e0f4e7a34f31d40481710c1e01803cd8c93eb00dc7f219bdc72d2fc8f
+DEBUG:boto:Signature:
+38248f80a9bd612ec3c0d766cbd2f52b71643eea1e4b80a3f97bb4bfe642a74a
+DEBUG:boto:Final headers: {'Content-Length': '138', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T070002Z', 'X-Amz-Target': 'DynamoDB_20120810.PutItem', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=38248f80a9bd612ec3c0d766cbd2f52b71643eea1e4b80a3f97bb4bfe642a74a'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '1b72b5ae-8191-46e5-9fc0-b7bc736386d0'), ('content-length', '2'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2745614147'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {}
+DEBUG:boto:{}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "users", "KeyConditions": {"gid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "g2"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '140', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T070614Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+9d0112bd67cb2d40a96387ffe7d86d6669b7f6acc488d2d02250028d6d2f6e8c
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T070614Z
+20150212/localhost/localhost/aws4_request
+b0d8e94612a9526c09f9398821438e85cb7a1a4d72ebe245185ba2de9df61f1a
+DEBUG:boto:Signature:
+d834334a4059a676cefea124c4817deff49601d17c28504443496c0311c0d0d1
+DEBUG:boto:Final headers: {'Content-Length': '140', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T070614Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=d834334a4059a676cefea124c4817deff49601d17c28504443496c0311c0d0d1'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', 'ca6736c1-ce63-482b-8fce-8bae025f4d2e'), ('content-length', '147'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '3213352951'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 400
+DEBUG:boto:{"__type":"com.amazon.coral.validate#ValidationException","Message":"All queries must have a condition on the hash key, and it must be of type EQ"}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "users", "KeyConditions": {"gid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "g2"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '140', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T070729Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+9d0112bd67cb2d40a96387ffe7d86d6669b7f6acc488d2d02250028d6d2f6e8c
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T070729Z
+20150212/localhost/localhost/aws4_request
+419d5fd21880a509590c5dd7da02b78dbd33344b4e91139edc9f9b938eab0578
+DEBUG:boto:Signature:
+709dfa5c4a0b145d8c79b4e56ce517f9944a3d7a31e7ca60c1d14c63058d64f9
+DEBUG:boto:Final headers: {'Content-Length': '140', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T070729Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=709dfa5c4a0b145d8c79b4e56ce517f9944a3d7a31e7ca60c1d14c63058d64f9'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '48dccd43-1e24-4b17-8521-314dc9c9180a'), ('content-length', '147'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '3213352951'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 400
+DEBUG:boto:{"__type":"com.amazon.coral.validate#ValidationException","Message":"All queries must have a condition on the hash key, and it must be of type EQ"}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"IndexName": "EverythingIndex", "ConsistentRead": false, "TableName": "users", "KeyConditions": {"gid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "g2"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '172', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T070936Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+961ebe872c24211bab466ddd38bfb57b61ce0f8ea4e70d7e1c8baae40f045744
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T070936Z
+20150212/localhost/localhost/aws4_request
+fe061131fbfbf0d3789a57f86ec2c4f00fc87cb31ea8540f6b1a03623708b62c
+DEBUG:boto:Signature:
+d4370b997ce0b89fab204c5e45e099a8b25e4c4e52e6604ca3da02b06d912569
+DEBUG:boto:Final headers: {'Content-Length': '172', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T070936Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=d4370b997ce0b89fab204c5e45e099a8b25e4c4e52e6604ca3da02b06d912569'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '900f11b4-3e31-4511-87fa-8632e3165816'), ('content-length', '57'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '913332556'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"Items":[{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":1}
+DEBUG:boto:{"Items":[{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":1}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"IndexName": "EverythingIndex", "ConsistentRead": false, "TableName": "users", "KeyConditions": {"gid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "g2"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '172', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T071005Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+961ebe872c24211bab466ddd38bfb57b61ce0f8ea4e70d7e1c8baae40f045744
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T071005Z
+20150212/localhost/localhost/aws4_request
+85cbd5c6a208d4f30740309b32156a9195b84be4f087c6511c645361f40d16cf
+DEBUG:boto:Signature:
+36a08fcb6a7a1ac88e981d1a18b1a2e4ce81a18adb70501e24a6a694bcc28c6e
+DEBUG:boto:Final headers: {'Content-Length': '172', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T071005Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=36a08fcb6a7a1ac88e981d1a18b1a2e4ce81a18adb70501e24a6a694bcc28c6e'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '7a21f33c-396c-44dc-8ffb-e98b617ccf2c'), ('content-length', '57'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '913332556'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"Items":[{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":1}
+DEBUG:boto:{"Items":[{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":1}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "users", "KeyConditions": {"uid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "u1"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '140', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T071036Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+c8f008d3a4c6f560c82d9bdea90c6b9aa5a3fe4984c0804b7a01c43b5723d48a
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T071036Z
+20150212/localhost/localhost/aws4_request
+ea0f9ca5de7d818022e83f02ea03b686b1037aeb0ddf8ab1ff7e936a1143ce93
+DEBUG:boto:Signature:
+be33a58873b5458f166913f4852bfda00343121b2992fe09745517f697ae305e
+DEBUG:boto:Final headers: {'Content-Length': '140', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T071036Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=be33a58873b5458f166913f4852bfda00343121b2992fe09745517f697ae305e'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', 'c61efd19-c942-418b-9d31-f531f587a67e'), ('content-length', '93'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '1176902207'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"Items":[{"uid":{"S":"u1"},"gid":{"S":"g1"}},{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":2}
+DEBUG:boto:{"Items":[{"uid":{"S":"u1"},"gid":{"S":"g1"}},{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":2}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ScanFilter": {}, "TableName": "users"}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '40', 'X-Amz-Target': 'DynamoDB_20120810.Scan'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T072555Z
+x-amz-target:DynamoDB_20120810.Scan
+
+host;x-amz-date;x-amz-target
+7536d7ad4f1c7adb2257da4c9495cb8f1cc7e7480114d920b0f670fba52952a2
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T072555Z
+20150212/localhost/localhost/aws4_request
+4cc87f28c29d6abb7abe4150bd059616901553cf7127f8eab4ee1a0c00ca65d5
+DEBUG:boto:Signature:
+f4565e07b80bd43ee33c42669769d7d73c50ce1f585f7e820c1592bbfc0db1f7
+DEBUG:boto:Final headers: {'Content-Length': '40', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T072555Z', 'X-Amz-Target': 'DynamoDB_20120810.Scan', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=f4565e07b80bd43ee33c42669769d7d73c50ce1f585f7e820c1592bbfc0db1f7'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '08cc5fe8-3f08-4303-a6b0-44dbbd7e6e1f'), ('content-length', '144'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '1895262337'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"Items":[{"uid":{"S":"1"},"gid":{"S":"1"}},{"uid":{"S":"u1"},"gid":{"S":"g1"}},{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":3,"ScannedCount":3}
+DEBUG:boto:{"Items":[{"uid":{"S":"1"},"gid":{"S":"1"}},{"uid":{"S":"u1"},"gid":{"S":"g1"}},{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":3,"ScannedCount":3}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"KeySchema": [{"KeyType": "HASH", "AttributeName": "uid"}, {"KeyType": "RANGE", "AttributeName": "gid"}], "GlobalSecondaryIndexes": [{"KeySchema": [{"KeyType": "HASH", "AttributeName": "gid"}, {"KeyType": "RANGE", "AttributeName": "uid"}], "IndexName": "EverythingIndex", "Projection": {"ProjectionType": "ALL"}, "ProvisionedThroughput": {"WriteCapacityUnits": 100, "ReadCapacityUnits": 100}}], "TableName": "user", "AttributeDefinitions": [{"AttributeName": "uid", "AttributeType": "S"}, {"AttributeName": "gid", "AttributeType": "S"}], "ProvisionedThroughput": {"WriteCapacityUnits": 1500, "ReadCapacityUnits": 500}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '619', 'X-Amz-Target': 'DynamoDB_20120810.CreateTable'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100233Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+host;x-amz-date;x-amz-target
+8b16ab688fcdb0d48028b4e987d5483f3febbcd0fdd3b0244f7b69044d5be0dc
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100233Z
+20150212/localhost/localhost/aws4_request
+7bf0d826ed8366cb1b6ab33b0f5e4d37da64a96996bddad868a4766816e3d720
+DEBUG:boto:Signature:
+3e2d8ca5f572654e8b5953d3d99e72dd52ed11b82a4673bfca6dec9062736fb6
+DEBUG:boto:Final headers: {'Content-Length': '619', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100233Z', 'X-Amz-Target': 'DynamoDB_20120810.CreateTable', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=3e2d8ca5f572654e8b5953d3d99e72dd52ed11b82a4673bfca6dec9062736fb6'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '65e19b57-14f8-48d6-9154-b5edd918c5db'), ('content-length', '769'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '4013885970'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"user","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423735353.483,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":0,"ItemCount":0,"GlobalSecondaryIndexes":[{"IndexName":"EverythingIndex","KeySchema":[{"AttributeName":"gid","KeyType":"HASH"},{"AttributeName":"uid","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"},"IndexStatus":"ACTIVE","ProvisionedThroughput":{"ReadCapacityUnits":100,"WriteCapacityUnits":100},"IndexSizeBytes":0,"ItemCount":0}]}}
+DEBUG:boto:{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"user","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423735353.483,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":0,"ItemCount":0,"GlobalSecondaryIndexes":[{"IndexName":"EverythingIndex","KeySchema":[{"AttributeName":"gid","KeyType":"HASH"},{"AttributeName":"uid","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"},"IndexStatus":"ACTIVE","ProvisionedThroughput":{"ReadCapacityUnits":100,"WriteCapacityUnits":100},"IndexSizeBytes":0,"ItemCount":0}]}}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"KeySchema": [{"KeyType": "HASH", "AttributeName": "uid"}, {"KeyType": "RANGE", "AttributeName": "gid"}], "TableName": "user", "AttributeDefinitions": [{"AttributeName": "uid", "AttributeType": "S"}, {"AttributeName": "gid", "AttributeType": "S"}], "ProvisionedThroughput": {"WriteCapacityUnits": 1500, "ReadCapacityUnits": 500}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '330', 'X-Amz-Target': 'DynamoDB_20120810.CreateTable'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100438Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+host;x-amz-date;x-amz-target
+89cc4f4936dd63a8adba35e945154f202ddd168cc87401617cb9dddb820c3f14
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100438Z
+20150212/localhost/localhost/aws4_request
+e9916b50ffe60002dce10c9704f8afc5c7db3e593206967633179dfe5a14ed86
+DEBUG:boto:Signature:
+c50778b8540037794c9e424d03d6286ea56393a7ee05c6598bd1ae517e9bdc37
+DEBUG:boto:Final headers: {'Content-Length': '330', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100438Z', 'X-Amz-Target': 'DynamoDB_20120810.CreateTable', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=c50778b8540037794c9e424d03d6286ea56393a7ee05c6598bd1ae517e9bdc37'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', 'a2d272e1-b898-4776-b328-ae30ad448239'), ('content-length', '112'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '1756396488'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 400
+DEBUG:boto:{"__type":"com.amazonaws.dynamodb.v20120810#ResourceInUseException","Message":"Cannot create preexisting table"}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '2', 'X-Amz-Target': 'DynamoDB_20120810.ListTables'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100445Z
+x-amz-target:DynamoDB_20120810.ListTables
+
+host;x-amz-date;x-amz-target
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100445Z
+20150212/localhost/localhost/aws4_request
+e8efe3fe9dfabce66a2dae6848d291eec93791d61ac2cd1a80019530daf388d5
+DEBUG:boto:Signature:
+bc731b71b7d09345a6fc7ecf3924acabe1f1ac7a50c209d41987b4585e6282ce
+DEBUG:boto:Final headers: {'Content-Length': '2', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100445Z', 'X-Amz-Target': 'DynamoDB_20120810.ListTables', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=bc731b71b7d09345a6fc7ecf3924acabe1f1ac7a50c209d41987b4585e6282ce'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '843fc9e3-1a5a-43df-b874-07ddb426daed'), ('content-length', '31'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '1238729039'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableNames":["user","users"]}
+DEBUG:boto:{"TableNames":["user","users"]}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"TableName": "user"}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '21', 'X-Amz-Target': 'DynamoDB_20120810.DeleteTable'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100456Z
+x-amz-target:DynamoDB_20120810.DeleteTable
+
+host;x-amz-date;x-amz-target
+fbea90b3d476e399709732d932ef0032a0007f7e67d67c88963cd93b09dba5ef
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100456Z
+20150212/localhost/localhost/aws4_request
+50bf8c6423e6570024180d00512abf89afdf559e7911085b5ccc3909bddf961e
+DEBUG:boto:Signature:
+f7eba352dd192598e23dc85669844c7b3e9165373ca3f651a4a4a27981aa7095
+DEBUG:boto:Final headers: {'Content-Length': '21', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100456Z', 'X-Amz-Target': 'DynamoDB_20120810.DeleteTable', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=f7eba352dd192598e23dc85669844c7b3e9165373ca3f651a4a4a27981aa7095'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', 'd88a6f71-f37c-46fd-bb34-de033c67952d'), ('content-length', '769'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '4013885970'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"user","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423735353.483,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":0,"ItemCount":0,"GlobalSecondaryIndexes":[{"IndexName":"EverythingIndex","KeySchema":[{"AttributeName":"gid","KeyType":"HASH"},{"AttributeName":"uid","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"},"IndexStatus":"ACTIVE","ProvisionedThroughput":{"ReadCapacityUnits":100,"WriteCapacityUnits":100},"IndexSizeBytes":0,"ItemCount":0}]}}
+DEBUG:boto:{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"user","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423735353.483,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":0,"ItemCount":0,"GlobalSecondaryIndexes":[{"IndexName":"EverythingIndex","KeySchema":[{"AttributeName":"gid","KeyType":"HASH"},{"AttributeName":"uid","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"},"IndexStatus":"ACTIVE","ProvisionedThroughput":{"ReadCapacityUnits":100,"WriteCapacityUnits":100},"IndexSizeBytes":0,"ItemCount":0}]}}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '2', 'X-Amz-Target': 'DynamoDB_20120810.ListTables'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100500Z
+x-amz-target:DynamoDB_20120810.ListTables
+
+host;x-amz-date;x-amz-target
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100500Z
+20150212/localhost/localhost/aws4_request
+7d7048af63194317aaaab29d74a288b796587d3e5a8b7a64c11aad3f3e2db0ea
+DEBUG:boto:Signature:
+5bc12655d86b982b823f2a78080095b04cfcc9415fda4f3491754f845bc2027d
+DEBUG:boto:Final headers: {'Content-Length': '2', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100500Z', 'X-Amz-Target': 'DynamoDB_20120810.ListTables', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=5bc12655d86b982b823f2a78080095b04cfcc9415fda4f3491754f845bc2027d'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', 'b06e5372-4f31-41df-8fc9-da7634b35599'), ('content-length', '24'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2808824553'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableNames":["users"]}
+DEBUG:boto:{"TableNames":["users"]}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"KeySchema": [{"KeyType": "HASH", "AttributeName": "uid"}, {"KeyType": "RANGE", "AttributeName": "gid"}], "TableName": "user", "AttributeDefinitions": [{"AttributeName": "uid", "AttributeType": "S"}, {"AttributeName": "gid", "AttributeType": "S"}], "ProvisionedThroughput": {"WriteCapacityUnits": 1500, "ReadCapacityUnits": 500}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '330', 'X-Amz-Target': 'DynamoDB_20120810.CreateTable'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100505Z
+x-amz-target:DynamoDB_20120810.CreateTable
+
+host;x-amz-date;x-amz-target
+89cc4f4936dd63a8adba35e945154f202ddd168cc87401617cb9dddb820c3f14
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100505Z
+20150212/localhost/localhost/aws4_request
+aba4d175889fb11b11bdeb209a1bfa36308ca0b9508479af779da18ed69b383e
+DEBUG:boto:Signature:
+5ccd6a6ebf5fd918f374adcb911ed5f78827e1433cfaa00a6adc1a01e57682ac
+DEBUG:boto:Final headers: {'Content-Length': '330', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100505Z', 'X-Amz-Target': 'DynamoDB_20120810.CreateTable', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=5ccd6a6ebf5fd918f374adcb911ed5f78827e1433cfaa00a6adc1a01e57682ac'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '5fb5bdb5-fb62-49d7-a42e-89c7f94cf636'), ('content-length', '444'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '4206688850'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"user","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423735505.843,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":0,"ItemCount":0}}
+DEBUG:boto:{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"user","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423735505.843,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":0,"ItemCount":0}}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"Expected": {"gid": {"Exists": false}, "uid": {"Exists": false}}, "Item": {"gid": {"S": "g2"}, "uid": {"S": "u1"}}, "TableName": "user"}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '137', 'X-Amz-Target': 'DynamoDB_20120810.PutItem'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100526Z
+x-amz-target:DynamoDB_20120810.PutItem
+
+host;x-amz-date;x-amz-target
+19e1f870b3eee1e8c039f0ceda47d3338bb881a529f5bf891c76b8bc2f954ee4
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100526Z
+20150212/localhost/localhost/aws4_request
+aa3cf7819642197d2c55f6274c8d3159e80bda4ea45794ac8f93b2319734cedc
+DEBUG:boto:Signature:
+aee9da27f430022ae2e9e6fb9d59a4ef6ce389af4419f80968104427668680a2
+DEBUG:boto:Final headers: {'Content-Length': '137', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100526Z', 'X-Amz-Target': 'DynamoDB_20120810.PutItem', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=aee9da27f430022ae2e9e6fb9d59a4ef6ce389af4419f80968104427668680a2'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '3cb3ac2b-e338-42d2-ad2d-34f2168cc5a9'), ('content-length', '2'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2745614147'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {}
+DEBUG:boto:{}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"Expected": {"gid": {"Exists": false}, "uid": {"Exists": false}}, "Item": {"gid": {"S": "g2"}, "uid": {"S": "u2"}}, "TableName": "user"}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '137', 'X-Amz-Target': 'DynamoDB_20120810.PutItem'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100545Z
+x-amz-target:DynamoDB_20120810.PutItem
+
+host;x-amz-date;x-amz-target
+2d95b3c31c0aafbb5c888c52eea5d8681b53b4adf06a49eed0a29f6671603e4c
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100545Z
+20150212/localhost/localhost/aws4_request
+6af8a73f213c448fe1e385d6a55893583162adc8fd1d3ad396bd9e0d1527be9f
+DEBUG:boto:Signature:
+2c93fa9702343fe85c8f2dcecbf73c4cd3fa5fd1604a3c4599d70b084a3a18b9
+DEBUG:boto:Final headers: {'Content-Length': '137', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100545Z', 'X-Amz-Target': 'DynamoDB_20120810.PutItem', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=2c93fa9702343fe85c8f2dcecbf73c4cd3fa5fd1604a3c4599d70b084a3a18b9'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '408c7426-3032-4032-b8f1-67defb1d14f7'), ('content-length', '2'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2745614147'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {}
+DEBUG:boto:{}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "user", "KeyConditions": {"uid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "u1"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '139', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100609Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+3ae904ef8680d02d7d3563f5250be4880f3304b14bd0382df61c7c2db9dd1df9
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100609Z
+20150212/localhost/localhost/aws4_request
+266164f047bb80d0c98ab01d53920b276caa7d9c2dcff4b993e3eac531f216ce
+DEBUG:boto:Signature:
+6dfab9a041cdb610d91c7a9d6a76ec80440d1a90c048c7b522defe193881b651
+DEBUG:boto:Final headers: {'Content-Length': '139', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100609Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=6dfab9a041cdb610d91c7a9d6a76ec80440d1a90c048c7b522defe193881b651'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '6f6529e9-022e-4c09-9c38-29737913c5a3'), ('content-length', '57'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '913332556'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"Items":[{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":1}
+DEBUG:boto:{"Items":[{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":1}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "users", "KeyConditions": {"gid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "g2"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '140', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100651Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+9d0112bd67cb2d40a96387ffe7d86d6669b7f6acc488d2d02250028d6d2f6e8c
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100651Z
+20150212/localhost/localhost/aws4_request
+b5622140e311ec8a862511b404d1625d0d016c5978cbf0cf53245755f9468599
+DEBUG:boto:Signature:
+d7fea8de071dc1eaf24673fb871180c4cabaf9fbd5cd812b003ffc7bd97e90b4
+DEBUG:boto:Final headers: {'Content-Length': '140', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100651Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=d7fea8de071dc1eaf24673fb871180c4cabaf9fbd5cd812b003ffc7bd97e90b4'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '9547d476-a2fd-4ef8-81d2-b638a9e42096'), ('content-length', '147'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '3213352951'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 400
+DEBUG:boto:{"__type":"com.amazon.coral.validate#ValidationException","Message":"All queries must have a condition on the hash key, and it must be of type EQ"}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"ConsistentRead": false, "TableName": "users", "KeyConditions": {"gid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "g2"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '140', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100716Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+9d0112bd67cb2d40a96387ffe7d86d6669b7f6acc488d2d02250028d6d2f6e8c
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100716Z
+20150212/localhost/localhost/aws4_request
+9c555c0c3ac5b822f3653b26c12123b2fae3008464f2577a3587a6f6d2d3b913
+DEBUG:boto:Signature:
+91fd0e4b304f01167e7ef06319d398c363eebc198678cd5e48534572579311ab
+DEBUG:boto:Final headers: {'Content-Length': '140', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100716Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=91fd0e4b304f01167e7ef06319d398c363eebc198678cd5e48534572579311ab'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '1f7715df-5d9c-4a4f-b61e-074c40673263'), ('content-length', '147'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '3213352951'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 400
+DEBUG:boto:{"__type":"com.amazon.coral.validate#ValidationException","Message":"All queries must have a condition on the hash key, and it must be of type EQ"}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"IndexName": "EverythingIndex", "ConsistentRead": false, "TableName": "users", "KeyConditions": {"gid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "g2"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '172', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100733Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+961ebe872c24211bab466ddd38bfb57b61ce0f8ea4e70d7e1c8baae40f045744
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100733Z
+20150212/localhost/localhost/aws4_request
+f6b116a2d2a19db099928625f7207e9a01ab86652b9d002aa7c606a97f477c04
+DEBUG:boto:Signature:
+3412de1dc119714c9e2ab166aaf6e09bcb6d859c8d739beee88322e1f18c3fe4
+DEBUG:boto:Final headers: {'Content-Length': '172', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100733Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=3412de1dc119714c9e2ab166aaf6e09bcb6d859c8d739beee88322e1f18c3fe4'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '720589a1-6704-41e1-9587-e177761939ae'), ('content-length', '57'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '913332556'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"Items":[{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":1}
+DEBUG:boto:{"Items":[{"uid":{"S":"u1"},"gid":{"S":"g2"}}],"Count":1}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"IndexName": "i1", "ConsistentRead": false, "TableName": "users", "KeyConditions": {"gid": {"ComparisonOperator": "EQ", "AttributeValueList": [{"S": "g2"}]}}}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '159', 'X-Amz-Target': 'DynamoDB_20120810.Query'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100744Z
+x-amz-target:DynamoDB_20120810.Query
+
+host;x-amz-date;x-amz-target
+395ec60a8315a36596be2ed2849b0c54e378d1dfb5914b793418e77c4bf1bc19
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100744Z
+20150212/localhost/localhost/aws4_request
+8918e08ad8a3f9be49bc5d7b3a3ac2ceabe1264a8751698712c00610d876685c
+DEBUG:boto:Signature:
+a5ed54b318b7bed7092a79a81ba1a31177c0022d3da4b10a4b2cdb3dce755e28
+DEBUG:boto:Final headers: {'Content-Length': '159', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100744Z', 'X-Amz-Target': 'DynamoDB_20120810.Query', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=a5ed54b318b7bed7092a79a81ba1a31177c0022d3da4b10a4b2cdb3dce755e28'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '0be890a5-2028-418a-9761-b5b9bf68e9e0'), ('content-length', '107'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '1574776499'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 400
+DEBUG:boto:{"__type":"com.amazon.coral.validate#ValidationException","Message":"Specified index is not part of table"}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '2', 'X-Amz-Target': 'DynamoDB_20120810.ListTables'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:establishing HTTP connection: kwargs={'port': 8000, 'timeout': 70}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100752Z
+x-amz-target:DynamoDB_20120810.ListTables
+
+host;x-amz-date;x-amz-target
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100752Z
+20150212/localhost/localhost/aws4_request
+231d790222b7b928c95c57a7da854de6547110bf8768fdc1a945b1a0ea737850
+DEBUG:boto:Signature:
+53abe3148d8ece4d45331628b93eba4236f64a2eb8853059872fffd1ff30027e
+DEBUG:boto:Final headers: {'Content-Length': '2', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100752Z', 'X-Amz-Target': 'DynamoDB_20120810.ListTables', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=53abe3148d8ece4d45331628b93eba4236f64a2eb8853059872fffd1ff30027e'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '22d3073a-4e7f-4549-8340-6dd1e90eaa43'), ('content-length', '31'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '1238729039'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableNames":["user","users"]}
+DEBUG:boto:{"TableNames":["user","users"]}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {"TableName": "user"}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '21', 'X-Amz-Target': 'DynamoDB_20120810.DeleteTable'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100801Z
+x-amz-target:DynamoDB_20120810.DeleteTable
+
+host;x-amz-date;x-amz-target
+fbea90b3d476e399709732d932ef0032a0007f7e67d67c88963cd93b09dba5ef
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100801Z
+20150212/localhost/localhost/aws4_request
+9771518c98b495967239938c567d2b1dfa8ce45ce5539402673a2437e7e7053b
+DEBUG:boto:Signature:
+6ce55656c9dc782579703a738e15db56bd0aeb3266cb5edf54234e1aab1b1d76
+DEBUG:boto:Final headers: {'Content-Length': '21', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100801Z', 'X-Amz-Target': 'DynamoDB_20120810.DeleteTable', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=6ce55656c9dc782579703a738e15db56bd0aeb3266cb5edf54234e1aab1b1d76'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '037b92ee-0782-43b9-9bd8-00b4b8b27dc9'), ('content-length', '445'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '4117471444'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"user","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423735505.843,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":20,"ItemCount":2}}
+DEBUG:boto:{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"uid","AttributeType":"S"},{"AttributeName":"gid","AttributeType":"S"}],"TableName":"user","KeySchema":[{"AttributeName":"uid","KeyType":"HASH"},{"AttributeName":"gid","KeyType":"RANGE"}],"TableStatus":"ACTIVE","CreationDateTime":1423735505.843,"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":500,"WriteCapacityUnits":1500},"TableSizeBytes":20,"ItemCount":2}}
+DEBUG:boto:Method: POST
+DEBUG:boto:Path: /
+DEBUG:boto:Data: {}
+DEBUG:boto:Headers: {'Host': 'localhost', 'Content-Type': 'application/x-amz-json-1.0', 'Content-Length': '2', 'X-Amz-Target': 'DynamoDB_20120810.ListTables'}
+DEBUG:boto:Host: localhost
+DEBUG:boto:Port: 8000
+DEBUG:boto:Params: {}
+DEBUG:boto:Token: None
+DEBUG:boto:CanonicalRequest:
+POST
+/
+
+host:localhost:8000
+x-amz-date:20150212T100804Z
+x-amz-target:DynamoDB_20120810.ListTables
+
+host;x-amz-date;x-amz-target
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+DEBUG:boto:StringToSign:
+AWS4-HMAC-SHA256
+20150212T100804Z
+20150212/localhost/localhost/aws4_request
+4593d4167ef021e82186d50e4f6e134abf1baff773c5b3567c2ed70d6a82f7a6
+DEBUG:boto:Signature:
+a6975769b4f08a20c2ebca615f984e0207e1d6a73f39fb7f8a4846df0a44ca19
+DEBUG:boto:Final headers: {'Content-Length': '2', 'User-Agent': 'Boto/2.34.0 Python/2.7.6 Linux/3.13.0-45-generic', 'Host': 'localhost:8000', 'X-Amz-Date': '20150212T100804Z', 'X-Amz-Target': 'DynamoDB_20120810.ListTables', 'Content-Type': 'application/x-amz-json-1.0', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ca2d17196a8b47e588ecb50cbc0d30d5/20150212/localhost/localhost/aws4_request,SignedHeaders=host;x-amz-date;x-amz-target,Signature=a6975769b4f08a20c2ebca615f984e0207e1d6a73f39fb7f8a4846df0a44ca19'}
+DEBUG:boto:Response headers: [('x-amzn-requestid', '3090794c-55ae-4e48-ace3-47e76bd8fd5a'), ('content-length', '24'), ('content-type', 'application/x-amz-json-1.0'), ('x-amz-crc32', '2808824553'), ('server', 'Jetty(8.1.12.v20130726)')]
+DEBUG:boto:Saw HTTP status: 200
+DEBUG:boto:Validating crc32 checksum for body: {"TableNames":["users"]}
+DEBUG:boto:{"TableNames":["users"]}

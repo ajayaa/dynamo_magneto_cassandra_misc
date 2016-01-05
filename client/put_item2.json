@@ -1,0 +1,23 @@
+
+{
+    "item": {
+        "Author": {
+            "S": "a"
+        }, 
+        "MessageId": {
+            "S": "1"
+        },
+        "Subject": {
+            "S": "Vacation"
+        }, 
+        "Body": {
+            "S": "Some vacation issues"
+        }, 
+        "DateTime": {
+          "N": "20140313164951"
+        },
+        "name": {
+          "S": "aj"
+        }
+    }
+}

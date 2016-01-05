@@ -1,0 +1,14 @@
+Query Knowledge:
+
+-Strongly consistent reads are not supported on global secondary index.
+	Reason: It probably creates a separate table for GSI. So when you 		insert a row in the primary table, it has to update the GSI also to 		reflect the new row in the table. If you make it strongy consistent, 		then writes would become slow because it would have to write to two 		tables. (Just a guess)
+
+Limit: You can specify a limit in your query. So dynamo will only check the specified number of rows before returning a result to you. Also there is a implicit limit of 1 MB on data checked during a query. It will return a LastEvaluated key which you can use in subsequent queries.
+
+In GSI a table's primary key attributes always projected.
+
+I think it is to make the rows unique. Otherwise it might happen that GSI completely does not reflect all the rows in the original table. 
+
+
+
+

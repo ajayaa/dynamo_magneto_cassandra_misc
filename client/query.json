@@ -1,0 +1,12 @@
+{
+    "key_conditions": {
+        "Author": {                                                                                                   
+            "attribute_value_list": [                                                                                  
+                {                                                                                                    
+                    "S": "John Doe"
+                }                                                                                                    
+            ],                                                                                                       
+            "comparison_operator": "EQ"
+        }
+    }
+}

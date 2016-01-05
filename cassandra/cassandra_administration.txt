@@ -1,0 +1,3 @@
+nodetool cfhistograms Keyspace1 Standard1
+
+nodetool cfstats Keyspace1.Standard1

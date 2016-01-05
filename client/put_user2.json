@@ -1,0 +1,24 @@
+
+{
+    "item": {
+        "id": {
+            "S": "a"
+        }, 
+        "name": {
+            "S": "a"
+        },
+        "extra": {
+            "S": "a"
+        }, 
+        "enabled": {
+            "N": 1 
+        }, 
+        "domain_id": {
+          "S": "a"
+        },
+        "default_project_id": {
+            "S": "a"
+        }
+
+    }
+}

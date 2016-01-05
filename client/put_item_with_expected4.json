@@ -1,0 +1,27 @@
+
+{
+    "item": {
+        "Author": {
+            "S": "Doe"
+        }, 
+        "MessageId": {
+            "S": "1"
+        },
+        "Subject": {
+            "S": "Vacation1"
+        }, 
+        "Body": {
+            "S": "Some vacation issues"
+        }, 
+        "DateTime": {
+          "N": "20140313164951"
+        }
+    },
+
+    "expected": {
+        "Author": {
+           "exists": false
+        }
+    },
+    "time_to_live": 200
+}

@@ -1,0 +1,75 @@
+
+{
+    "table_name": "email_data",
+    "attribute_definitions": [
+        {
+            "attribute_name": "Author", 
+            "attribute_type": "S"
+        }, 
+        {
+            "attribute_name": "Subject", 
+            "attribute_type": "S"
+        }, 
+        {
+            "attribute_name": "Body", 
+            "attribute_type": "S"
+        }, 
+        {
+            "attribute_name": "DateTime", 
+            "attribute_type": "N"
+        },
+        {
+            "attribute_name": "MessageId", 
+            "attribute_type": "S"
+        }
+    ], 
+    "key_schema": [
+        {
+            "attribute_name": "Author", 
+            "key_type": "HASH"
+        }, 
+        {
+            "attribute_name": "MessageId", 
+            "key_type": "RANGE"
+        }
+    ],
+    
+    "global_secondary_indexes": [
+        {   
+            "index_name": "Subject_index",
+            "key_schema": [
+                {   
+                    "attribute_name": "Subject",
+                    "key_type": "HASH"
+                },  
+                {   
+                    "attribute_name": "DateTime",
+                    "key_type": "RANGE"
+                }   
+            ],  
+            "projection": {
+                "projection_type": "ALL"
+            }   
+        }
+    ,
+    
+        {   
+            "index_name": "Body_index",
+            "key_schema": [
+                {   
+                    "attribute_name": "Body",
+                    "key_type": "HASH"
+                },  
+                {   
+                    "attribute_name": "Subject",
+                    "key_type": "RANGE"
+                }   
+            ],  
+            "projection": {
+                "projection_type": "ALL"
+            }   
+        }
+    ]
+
+ 
+    }

@@ -1,0 +1,21 @@
+
+{
+    "item": {
+        "Author": {
+            "S": "John Doe"
+        }, 
+        "MessageId": {
+            "S": "1"
+        },
+        "Subject": {
+            "S": "Vacation"
+        }, 
+        "Body": {
+            "S": "Some vacation issues"
+        }, 
+        "DateTime": {
+          "N": "20140313164951"
+        }
+    },
+    "time_to_live": 120
+}

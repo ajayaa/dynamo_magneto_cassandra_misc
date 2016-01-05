@@ -1,0 +1,12 @@
+{
+    "index_name": "Body_index",
+    "key_conditions": {
+        "Body": {                                                                                                   
+            "attribute_value_list": [                                                                                  
+                {                                                                                                    
+                    "S": "b"
+                }                                                                                                    
+            ],                                                                                                       
+            "comparison_operator": "EQ"
+        }    }
+}

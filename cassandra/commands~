@@ -1,0 +1,9 @@
+cassandra-stress write -node 19.0.0.227
+
+python benchmarks/future_full_throttle.py -n 200 --hosts= --threads=
+
+Command run by Netflix guys
+===========================
+
+cassandra-stress -d [list of C* IPs] -t 120 -r -p 7102 -n 1000000000  -k -f [path to log] -o INSERT
+

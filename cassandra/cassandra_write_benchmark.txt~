@@ -1,0 +1,115 @@
+Stress-tool in the same node
+============================
+ 
+            id, partitions,    op/s,    pk/s,   row/s,    mean,     med,     .95,     .99,    .999,     max,   time,   stderr
+  4 threadCount, 127500    ,    3692,    3692,    3692,     1.1,     0.9,     1.9,     3.3,     8.5,   394.2,   34.5,  0.02097
+  8 threadCount, 154500    ,    4932,    4932,    4932,     1.6,     0.9,     4.2,     5.6,    54.9,   163.2,   31.3,  0.01536
+ 16 threadCount, 184000    ,    5931,    5931,    5931,     2.7,     1.3,     8.1,    11.5,    66.4,   154.2,   31.0,  0.01452
+ 24 threadCount, 194900    ,    6229,    6229,    6229,     3.8,     1.7,    12.6,    18.0,    73.6,   176.4,   31.3,  0.01209
+ 36 threadCount, 215050    ,    6788,    6788,    6788,     5.3,     2.2,    17.5,    24.6,    75.3,   202.7,   31.7,  0.01094
+ 54 threadCount, 206850    ,    6472,    6472,    6472,     8.3,     2.9,    28.4,    41.4,    92.3,   225.9,   32.0,  0.01305
+ 81 threadCount, 229300    ,    7074,    7074,    7074,    11.4,     4.7,    37.1,    59.4,   107.9,   294.6,   32.4,  0.01180
+121 threadCount, 247150    ,    7386,    7386,    7386,    16.3,     6.8,    56.2,    91.1,   140.6,   320.0,   33.5,  0.01301
+181 threadCount, 255800    ,    7276,    7276,    7276,    24.7,    10.5,   101.7,   140.6,   196.1,   345.9,   35.2,  0.01383
+271 threadCount, 490850    ,    7509,    7509,    7509,    35.9,    28.9,   112.0,   173.7,   252.6,   447.9,   65.4,  0.01954
+406 threadCount, 297000    ,    7738,    7738,    7738,    51.8,    32.0,   177.4,   271.7,   416.7,   680.5,   38.4,  0.01216
+609 threadCount, 338500    ,    7967,    7967,    7967,    75.2,    52.5,   243.2,   368.6,   577.3,   679.5,   42.5,  0.01270
+913 threadCount, 386500    ,    8024,    8024,    8024,   111.9,    69.7,   393.5,   556.3,   812.5,   963.5,   48.2,  0.01283
+
+
+Stres-tool in a different node
+==============================
+
+             id, partitions,    op/s,    pk/s,   row/s,    mean,     med,     .95,     .99,    .999,     max,   time,   stderr
+  4 threadCount, 91650     ,    3009,    3009,    3009,     1.3,     1.1,     2.2,     3.1,    13.6,   212.2,   30.5,  0.02767
+  8 threadCount, 169350    ,    5576,    5576,    5576,     1.4,     1.2,     2.5,     4.2,    53.8,   174.2,   30.4,  0.01162
+ 16 threadCount, 237750    ,    7781,    7781,    7781,     2.0,     1.8,     3.6,     6.5,    62.7,   133.6,   30.6,  0.01291
+ 24 threadCount, 286950    ,    9347,    9347,    9347,     2.5,     2.1,     4.7,     8.2,    72.3,   129.2,   30.7,  0.02563
+ 36 threadCount, 322400    ,   10509,   10509,   10509,     3.4,     2.7,     6.1,    13.6,    77.8,   140.4,   30.7,  0.01856
+ 54 threadCount, 362650    ,   11633,   11633,   11633,     4.6,     3.5,     8.5,    24.4,   110.5,   253.3,   31.2,  0.01887
+ 81 threadCount, 363000    ,   11640,   11640,   11640,     6.9,     4.8,    14.8,    51.3,   154.4,   360.2,   31.2,  0.01793
+121 threadCount, 457100    ,   12082,   12082,   12082,    10.0,     6.0,    30.3,    79.8,   158.4,   260.4,   37.8,  0.01918
+181 threadCount, 571650    ,   12709,   12709,   12709,    14.2,     8.0,    53.0,   100.3,   212.2,   272.6,   45.0,  0.01915
+271 threadCount, 428750    ,   12909,   12909,   12909,    20.9,     9.8,    77.8,   123.4,   204.8,   298.6,   33.2,  0.01635
+406 threadCount, 483450    ,   12678,   12678,   12678,    31.8,    14.1,   115.2,   175.0,   276.9,   382.7,   38.1,  0.01908
+
+============================================================================================================================
+Command: cassandra-stress write n=1000000 CL=ONE -key dist=FIXED\(1\) -col n=FIXED\(100\) -schema replication\(factor=3\) -node 19.0.0.227
+============================================================================================================================
+Results:
+op rate                   : 2388  
+partition rate            : 2388  
+row rate                  : 2388  
+latency mean              : 20.7  
+latency median            : 6.1   
+latency 95th percentile   : 74.6  
+latency 99th percentile   : 189.2 
+latency 99.9th percentile : 517.5 
+latency max               : 2423.6
+Total operation time      : 00:06:58
+END
+
+On Two different nodes same command
+-----------------------------------
+first result
+............
+Results:
+op rate                   : 1111
+partition rate            : 1111
+row rate                  : 1111
+latency mean              : 44.7
+latency median            : 9.6
+latency 95th percentile   : 169.2
+latency 99th percentile   : 371.3
+latency 99.9th percentile : 807.9
+latency max               : 1302.3
+Total operation time      : 00:14:59
+END
+
+Second result
+.............
+Results:
+op rate                   : 1117
+partition rate            : 1117
+row rate                  : 1117
+latency mean              : 44.5
+latency median            : 10.2
+latency 95th percentile   : 193.8
+latency 99th percentile   : 409.4
+latency 99.9th percentile : 822.1
+latency max               : 1254.1
+Total operation time      : 00:14:54
+END
+
+
+=============================================================================================================================
+cassandra-stress read n=1000000 CL=ONE -key dist=FIXED\(1\) -schema replication\(factor=3\) -rate threads=50 -node 19.0.0.227
+=============================================================================================================================
+Results:
+op rate                   : 4351
+partition rate            : 4351
+row rate                  : 4351
+latency mean              : 11.5
+latency median            : 2.5
+latency 95th percentile   : 48.7
+latency 99th percentile   : 66.0
+latency 99.9th percentile : 200.6
+latency max               : 412.4
+Total operation time      : 00:03:49
+END
+-------------------------
+after flush on every node
+-------------------------
+Results:
+op rate                   : 4182
+partition rate            : 4182
+row rate                  : 4182
+latency mean              : 11.9
+latency median            : 2.2
+latency 95th percentile   : 50.7
+latency 99th percentile   : 65.2
+latency 99.9th percentile : 102.4
+latency max               : 348.9
+Total operation time      : 00:03:59
+END
+

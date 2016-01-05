@@ -1,0 +1,13 @@
+{
+   "consistent_read": true,
+   "key": 
+       {
+           
+           "Author": {
+               "S": "John Doe"
+            }, 
+            "MessageId": {
+            "S": "1"
+            }
+       }
+}

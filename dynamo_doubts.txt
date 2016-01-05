@@ -1,0 +1,6 @@
+http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html
+
+If dynamodb does not support anything except Set (MultiValued types) then why are we supporting Dictionary and List in magnetodb?
+
+How does strongly consistent and high availability work in general?
+

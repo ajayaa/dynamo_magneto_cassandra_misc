@@ -1,0 +1,24 @@
+{
+    "index_name": "Subject_index",
+    "key_conditions": {
+        "Subject": {                                                                                                   
+            "attribute_value_list": [                                                                                  
+                {                                                                                                    
+                    "S": "s"
+                }                                                                                                    
+            ],                                                                                                       
+            "comparison_operator": "EQ"
+        }, 
+        "DateTime": {
+            "attribute_value_list": [
+                {
+                    "N": "20100313164951"
+                },
+                {
+                    "N": "20150313164951"
+                }
+            ], 
+            "comparison_operator": "BETWEEN"
+        }
+    }
+}

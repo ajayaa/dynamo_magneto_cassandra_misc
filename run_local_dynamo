@@ -1,0 +1,3 @@
+cd ~/mdb/dynamodb_local_2013-12-12
+java -Djava.library.path=. -jar DynamoDBLocal.jar
+cd
